@@ -11,7 +11,7 @@ Fx<-function(y,tol,a,ITER)
   if(tol < error[iter] || iter<ITER)
   {
     theta<-c(theta,(m/n)*ybar+((n-m)/n)*
-               (theta[iter]+(dnorm(a-theta[iter]))/(pnorm(a-theta[iter]))))
+               (theta[iter]+(dnorm(a-theta[iter]))/(1-pnorm(a-theta[iter]))))
     iter<-iter+1
     error[iter]<- abs(theta[iter]-theta[iter-1])
   }
